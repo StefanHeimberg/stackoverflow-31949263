@@ -41,11 +41,10 @@ public class CreditCardSearch {
                 linesA = linesPerPath.get(it.next());
             }
             List<String> linesB = linesPerPath.get(it.next());
-
-            if (linesA.retainAll(linesB)) {
-                creditcards.addAll(linesA);
-            }
+            linesA.retainAll(linesB);
         }
+        
+        creditcards.addAll(linesA);
 
         return creditcards;
     }
